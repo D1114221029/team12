@@ -43,8 +43,61 @@
 <section>
     <legend>
         <fieldset>SDGs的17個目標</fieldset>
+        <table border="1">
+            <tr>
+                <th>1</th><td>消除貧窮</td>
+            </tr>
+            <tr>
+                <th>2</th><td>消除飢餓</td>
+            </tr>
+            <tr>
+                <th>3</th><td>健康與福祉</td>
+            </tr>
+            <tr>
+                <th>4</th><td>優質教育</td>
+            </tr>
+            <tr>
+                <th>5</th><td>性別平等</td>
+            </tr>
+            <tr>
+                <th>6</th><td>清潔飲水和衛生設施</td>
+            </tr>
+            <tr>
+                <th>7</th><td>可負擔的清潔能源</td>
+            </tr>
+            <tr>
+                <th>8</th><td>體面工作和經濟增長</td>
+            </tr>
+            <tr>
+                <th>9</th><td>產業、創新和基礎設施</td>
+            </tr>
+            <tr>
+                <th>10</th><td>減少不平等</td>
+            </tr>
+            <tr>
+                <th>11</th><td>可持續城市和社區</td>
+            </tr>
+            <tr>
+                <th>12</th><td>負責任消費和生產</td>
+            </tr>
+            <tr>
+                <th>13</th><td>氣候行動</td>
+            </tr>
+            <tr>
+                <th>14</th><td>水下生物</td>
+            </tr>
+            <tr>
+                <th>15</th><td>陸地生物</td>
+            </tr>
+            <tr>
+                <th>16</th><td>和平與公正</td>
+            </tr>
+            <tr>
+                <th>17</th><td>促進全球夥伴關係</td>
+            </tr>
+        </table>
     </legend>
-    <!--<h2>SDGs的17個目標</h2>-->
+    <!--<h2>SDGs的17個目標</h2>
     <ol>
         <li>消除貧窮</li>
         <li>消除飢餓</li>
@@ -63,7 +116,7 @@
         <li>陸地生物</li>
         <li>和平與公正</li>
         <li>促進全球夥伴關係</li>
-    </ol>
+    </ol>-->
 </section>
 
 <section>
