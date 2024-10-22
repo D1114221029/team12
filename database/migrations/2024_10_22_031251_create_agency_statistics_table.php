@@ -21,8 +21,8 @@ class CreateAgencyStatisticsTable extends Migration
             $table->integer('simple_appointees');
             $table->integer('recommended_appointees');
             $table->integer('commissioned_appointees');
-            $table->decimal('average_age', 4, 2);
-            $table->decimal('average_seniority', 4, 2);
+            $table->double('average_age', 4, 2);
+            $table->double('average_seniority', 4, 2);
             $table->timestamps();
         });
     }
