@@ -51,9 +51,9 @@ class AgencyStatisticsTableSeeder extends Seeder
         $Fagency_type = array('一般行政機關女性','外交僑務機關女性','警察行政機關女性','財稅行政機關女性','文教行政機關女性','司法行政機關女性','經建行政機關女性','交通行政機關女性','衛生行政機關女性','社會福利機關女性');
         for ($i = 0; $i < 10; $i++)//各別總計
         {
-            $Aj = rand(0, count($ALLagency_type)-1);
-            $Wj = rand(0, count($Wagency_type)-1);
-            $Fj = rand(0, count($Fagency_type)-1);
+            //$Aj = rand(0, count($ALLagency_type)-1);
+            //$Wj = rand(0, count($Wagency_type)-1);
+            //$Fj = rand(0, count($Fagency_type)-1);
             $wtotal_count = rand(950,33000);
             $Ftotal_count = rand(900,30000);
             $Wgovernment = rand(5,90);
@@ -70,7 +70,7 @@ class AgencyStatisticsTableSeeder extends Seeder
             $Fseniority = rand(1000,2000)/100;
             DB::table('agency_statistics')->insert([
                 [
-                    'agency_type' => $ALLagency_type[$Aj],//機關類別
+                    'agency_type' => $ALLagency_type[$i],//機關類別
                     'total_count' => $wtotal_count+$Ftotal_count,//總計(人)
                     'government_officials'=> $Wgovernment+$Fgovernment,//政務人員
                     'simple_appointees'=> $Wsimple+$Fsimple,//簡任(派)
@@ -81,7 +81,7 @@ class AgencyStatisticsTableSeeder extends Seeder
                     'created_at'=>now(),
                     'updated_at'=> now()
                 ],[
-                    'agency_type' => $Wagency_type[$Wj],//機關類別
+                    'agency_type' => $Wagency_type[$i],//機關類別
                     'total_count' => $wtotal_count,//總計(人)
                     'government_officials'=> $Wgovernment,//政務人員
                     'simple_appointees'=>  $Wsimple,//簡任(派)
@@ -92,7 +92,7 @@ class AgencyStatisticsTableSeeder extends Seeder
                     'created_at'=>now(),
                     'updated_at'=> now()
                 ],[
-                    'agency_type' => $Fagency_type[$Fj],//機關類別
+                    'agency_type' => $Fagency_type[$i],//機關類別
                     'total_count' => $Ftotal_count,//總計(人)
                     'government_officials'=> $Fgovernment,//政務人員
                     'simple_appointees'=> $Fsimple,//簡任(派)
