@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Oberservation;
 
 class AgencyStatisticsController extends Controller
 {
@@ -14,6 +15,10 @@ class AgencyStatisticsController extends Controller
     public function index()
     {
         //
+        $obervations = Oberservation::all();
+        return view("observations.index", compact("obervations"));
+        //return view('observations.index');
+        
     }
 
     /**
