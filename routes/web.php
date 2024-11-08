@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AgencyStatisticsController;
+use App\Models\Oberservation;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,4 @@ Route::get('/', function () {
 Route::get('/sdgs', function () {
     return view('intor_sdgs');
 });
+Route::get('observations', [AgencyStatisticsController::class,'index']);
