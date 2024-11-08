@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controller\government_agencies_staffsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,14 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get(
-    '/', function () 
+    '/sdgs', function () 
     {
-        return view('welcome');
+        return view('introl_sdgs');
     }
 );
 
-Route::get(
-    'sdgs', function () {
-        return view('introl_sdgs');
-    }
+Route::get('government_agencies_staffs', [government_agencies_staffsController::class, 'index']
+
 );
