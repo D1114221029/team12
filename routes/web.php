@@ -22,4 +22,4 @@ Route::get('/', function () {
 Route::get('/sdgs', function () {
     return view('intor_sdgs');
 });
-Route::get('observations', [AgencyStatisticsController::class,'index']);
+Route::get('/observations', [AgencyStatisticsController::class,'index']);
