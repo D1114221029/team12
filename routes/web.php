@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-use App\Http\Controller\government_agencies_staffsController;
+use App\Http\Controllers\GovernmentAgenciesStaffsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,13 +13,15 @@ use App\Http\Controller\government_agencies_staffsController;
 |
 */
 
-Route::get(
-    '/sdgs', function () 
-    {
-        return view('introl_sdgs');
-    }
+Route::get('/', function () 
+{
+    return view('welcome');
+});
+
+Route::get('/sdgs', function () 
+{
+    return view('introl_sdgs');
+}
 );
 
-Route::get('government_agencies_staffs', [government_agencies_staffsController::class, 'index']
-
-);
+Route::get('observations', [GovernmentAgenciesStaffsController::class, 'index']);

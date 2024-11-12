@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Observation;
 use Illuminate\Http\Request;
-use App\Models\Oberservation;
-class AgencyStatisticsController extends Controller
+
+class GovernmentAgenciesStaffsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,9 @@ class AgencyStatisticsController extends Controller
      */
     public function index()
     {
-        $obervations = Oberservation::all();
-        return view("observations.index", compact("obervations"));
+        //
+        $observations = Observation::all();
+        return view('observations.index', compact('observations'));
     }
 
     /**
