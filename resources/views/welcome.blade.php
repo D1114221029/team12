@@ -57,6 +57,7 @@
 
         .discussion p {
             font-size: 1.2em;
+            color: #111;
         }
 
         footer {
