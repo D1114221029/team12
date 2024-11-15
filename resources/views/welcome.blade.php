@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team12組 性別平等</title>
+    <title>Team12</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -59,7 +59,6 @@
             font-size: 1.2em;
         }
 
-        /* 頁尾 */
         footer {
             background-color: #333;
             color: white;
