@@ -52,6 +52,10 @@
     </style>
 </head>
 <body>
+    
+</body>
+<!--
+<body>
     <header>
         全國公務人員數案機關分類
     </header>
@@ -71,7 +75,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($obervations as $observation)
+                    @foreach ($obervations as $observation)
                     <tr>
                         <td>{{$observation->id}}</td>
                         <td>{{$observation->agency_type}}</td>
@@ -84,8 +88,10 @@
                         <td>{{$observation->average_seniority}}</td>
                     </tr>
                     @endforeach
-                </tbody>
-            </table>
-        </section>
+            </tbody>
+        </table>
+    </section>
+
 </body>
+-->
 </html>
