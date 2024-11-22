@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>(SDGs)永續發展 - 性別平等</title>
+    <title>(SDGs)永續發展</title>
     <style>
         /* 通用樣式 */
         * {
@@ -127,7 +127,7 @@
 
     <!-- Header -->
     <header>
-        <h1>(SDGs)永續發展 - 性別平等</h1>
+        <h1>(SDGs)永續發展</h1>
         <p>聯合國於2015年通過的全球性目標，共有17項，旨在推動可持續發展與改善全球生活品質。</p>
     </header>
 
