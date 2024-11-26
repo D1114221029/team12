@@ -1,6 +1,5 @@
 @extends('app')
 @section('table')
-<section>
         <table>
             <thead>
                 <tr>
@@ -29,5 +28,4 @@
                 @endforeach
             </tbody>
         </table>
-</body>
-</html>
+@endsection

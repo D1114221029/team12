@@ -1,4 +1,5 @@
+<header>
 <div class="title sdgs">
-    Gender equality
+G
 </div>
-<hr>
+</header>
