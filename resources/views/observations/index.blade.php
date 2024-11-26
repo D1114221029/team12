@@ -1,35 +1,35 @@
 @extends('app')
 @section('agencystatistics_contents')
-    <section>
-        <table>
-            <thead>
-                 <tr>
-                    <th>編號</th>
-                    <th>機關類別</th>
-                    <th>總計(人)</th>
-                    <th>政務人員</th>
-                    <th>簡任(派)</th>
-                    <th>薦任(派)</th>
-                    <th>委任(派)</th>
-                    <th>平均年齡(歲)</th>
-                    <th>平均年資(年)</th>
+<section>
+    <table>
+        <thead>
+            <tr>
+                <th>編號</th>
+                <th>機關類別</th>
+                <th>總計(人)</th>
+                <th>政務人員</th>
+                <th>簡任(派)</th>
+                <th>薦任(派)</th>
+                <th>委任(派)</th>
+                <th>平均年齡(歲)</th>
+                <th>平均年資(年)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($obervations as $observation)
+                <tr>
+                    <td>{{$observation->id}}</td>
+                    <td>{{$observation->agency_type}}</td>
+                    <td>{{$observation->total_count}}</td>
+                    <td>{{$observation->government_officials}}</td>
+                    <td>{{$observation->simple_appointees}}</td>
+                    <td>{{$observation->recommended_appointees}}</td>
+                    <td>{{$observation->commissioned_appointees}}</td>
+                    <td>{{$observation->average_age}}</td>
+                    <td>{{$observation->average_seniority}}</td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach ($obervations as $observation)
-                    <tr>
-                        <td>{{$observation->id}}</td>
-                        <td>{{$observation->agency_type}}</td>
-                        <td>{{$observation->total_count}}</td>
-                        <td>{{$observation->government_officials}}</td>
-                        <td>{{$observation->simple_appointees}}</td>
-                        <td>{{$observation->recommended_appointees}}</td>
-                        <td>{{$observation->commissioned_appointees}}</td>
-                        <td>{{$observation->average_age}}</td>
-                        <td>{{$observation->average_seniority}}</td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </section>
+            @endforeach
+        </tbody>
+    </table>
+</section>
 @endsection
