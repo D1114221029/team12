@@ -3,13 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>@yield('title')</title>
+        <title>@yield('title','HomePage')</title>
+        <link rel="stylesheet" href="/css/app/css">z
     </head>
  <body class="antitaliased">
+    @include('header')
     <div class="content">
-        @include('data.header')
-        @yield('sdgs_content')
-        @include('data.footer')
+        @yield('table')
     </div>
+    @include('footer')
  </body> 
 </html>

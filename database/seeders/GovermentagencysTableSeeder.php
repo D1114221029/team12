@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
+use Illuminate\Support\Facades\DB;
+
 class GovermentagencysTableSeeder extends Seeder
 {
     /**
@@ -32,7 +34,7 @@ class GovermentagencysTableSeeder extends Seeder
             $Fage = rand(4000,5000)/100;
             $Wseniority = rand(1000,2000)/100;
             $Fseniority = rand(1000,2000)/100;
-            DB::table('agency_statistics')->insert
+            DB::table('government_agencies_staffs')->insert
             ([
                 [
                     'agency_type' => $ALLagency_type[$i],//機關類別

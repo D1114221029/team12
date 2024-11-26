@@ -24,4 +24,4 @@ Route::get('/sdgs', function ()
 }
 );
 
-Route::get('observations', [GovernmentAgenciesStaffsController::class, 'index']);
+Route::get('observations', [GovernmentAgenciesStaffsController::class, 'index'])->name('observations.index');
