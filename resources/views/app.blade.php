@@ -43,7 +43,7 @@
             color: rgb(0, 0, 0);
         }
     </style>
-    @stack('styles')
+    
 </head>
 <body>
     @include('header')
