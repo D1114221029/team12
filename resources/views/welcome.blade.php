@@ -130,7 +130,7 @@
     <div class="content">
         <h1 id="welcome-title">Welcome!</h1>
         <p id="welcome-text">We are glad to see you here. Start exploring now!</p>
-        <button class="btn" onclick="window.location.href='http://sdg12.lhu.edu.tw/observations/index.blade.php'" id='star-text'>Start Now</button>
+        <button class="btn" onclick="window.location.href='http://127.0.0.1:8000/observations'" id='star-text'>Start Now</button>
         <button class="lang-btn" onclick="toggleLanguage()" id='change-text'>Chinese/English</button>
     </div>
 
