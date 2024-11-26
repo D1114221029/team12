@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-@extends('app') <!-- 繼承自布局模板 -->
-    
-@section('content')
+@extends('app')
+@section('agencystatistics_contents')
     <section>
         <table>
             <thead>

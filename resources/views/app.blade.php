@@ -39,8 +39,8 @@
             color: white;
         }
         tr:hover {
-            background-color: #774aa1;
-            color: white;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
         }
     </style>
     @stack('styles')
@@ -48,7 +48,7 @@
 <body>
     @include('header')
     <div class="content">
-        @yield('content')
+        @yield('agencystatistics_contents')
     </div>
     @include('footer') 
 </body>
