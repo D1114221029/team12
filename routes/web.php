@@ -22,4 +22,7 @@ Route::get('/', function () {
 Route::get('/sdgs', function () {
     return view('intor_sdgs');
 });
-Route::get('/observations', [AgencyStatisticsController::class,'index']);
+Route::get('observations', [AgencyStatisticsController::class,'index'])->name('observations.index');
+Route::get('observations/{id}', [AgencyStatisticsController::class,'show'])->name('observations.show');
+Route::get('observations/{id}/edit', [AgencyStatisticsController::class,'edit'])->name('observations.edit');
+Route::delete('observations/delete/{id}', [AgencyStatisticsController::class,'destroy'])->name('observations.destroy');

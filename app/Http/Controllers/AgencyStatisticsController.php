@@ -49,6 +49,8 @@ class AgencyStatisticsController extends Controller
     public function show($id)
     {
         //
+        $observation = Oberservation::findOrFail($id);
+        return view("observations.show", compact("observation"));
     }
 
     /**
@@ -83,5 +85,8 @@ class AgencyStatisticsController extends Controller
     public function destroy($id)
     {
         //
+        $observation = Oberservation::findOrFail($id);
+        $observation->delete();
+        return redirect('observations');
     }
 }

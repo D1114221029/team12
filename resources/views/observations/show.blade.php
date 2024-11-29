@@ -1,0 +1,43 @@
+@extends('app')
+@section('agencystatistics_contents')
+<section>
+    <table>
+        <tr>
+            <th>編號:</th>
+            <td>{{$observation->id}}</td>
+        </tr>
+        <tr>
+            <th>機關類別:</th>
+            <td>{{$observation->agency_type}}</td>
+        </tr>
+        <tr>
+            <th>總計(人):</th>
+            <td>{{$observation->total_count}}</td>
+        </tr>
+        <tr>
+            <th>政務人員:</th>
+            <td>{{$observation->government_officials}}</td>
+        </tr>
+        <tr>
+            <th>簡任(派):</th>
+            <td>{{$observation->simple_appointees}}</td>
+        </tr>
+        <tr>
+            <th>薦任(派):</th>
+            <td>{{$observation->recommended_appointees}}</td>
+        </tr>
+        <tr>
+            <th>委任(派):</th>
+            <td>{{$observation->commissioned_appointees}}</td>
+        </tr>
+        <tr>
+            <th>平均年齡(歲):</th>
+            <td>{{$observation->average_age}}</td>
+        </tr>
+        <tr>
+            <th>平均年資(年):</th>
+            <td>{{$observation->average_seniority}}</td>
+        </tr>
+    </table>
+</section>
+@endsection
