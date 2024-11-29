@@ -49,6 +49,8 @@ class GovernmentAgenciesStaffsController extends Controller
     public function show($id)
     {
         //
+        $observation = Observation::findOrFail($id);
+        return view('observations.show')->with('observation',$observation);
     }
 
     /**
@@ -82,6 +84,8 @@ class GovernmentAgenciesStaffsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $observation = Observation::findOrFail($id);
+        $observation->delete();
+        return redirect('observations');
     }
 }

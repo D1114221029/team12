@@ -24,4 +24,14 @@ Route::get('/sdgs', function ()
 }
 );
 
-Route::get('observations', [GovernmentAgenciesStaffsController::class, 'index'])->name('observations.index');
+Route::get('observations', [GovernmentAgenciesStaffsController::class, 'index'])
+    ->name('observations.index');
+Route::get('observations/{id}', [GovernmentAgenciesStaffsController::class, 'show'])
+    ->where('id','[0-9]+')
+    ->name('observations.show');
+Route::get('observations/{id}/edit', [GovernmentAgenciesStaffsController::class, 'index'])
+    ->where('id','[0-9]+')
+    ->name('observations.edit');
+Route::delete('observations/delete/{id}', [GovernmentAgenciesStaffsController::class, 'destroy'])
+    ->where('id','[0-9]+')
+    ->name('observations.destroy');

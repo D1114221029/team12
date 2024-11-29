@@ -1,11 +1,5 @@
 @extends('app')
 @section('table')
-    <style>
-        body
-        {
-          background-color: lightblue;
-        }
-    </style>
         <table>
                 <tr>
                     <th>機關類型</th>
@@ -20,7 +14,7 @@
                     <th>操作2</th>
                     <th>操作3</th>
                 </tr>
-            @foreach ($observations as $observation)
+
                 <tr>
                     <td>{{ $observation->agency_type }}</td>
                     <td>{{ $observation->total_people }}</td>
@@ -30,15 +24,6 @@
                     <td>{{ $observation->appointed_rank_staff }}</td>
                     <td>{{ $observation->average_age }}</td>
                     <td>{{ $observation->average_seniority }}</td>
-                    <td><a href="{{ route('observations.show', ['id' => $observation->id]) }}">顯示</a></td>
-                    <td><a href="{{ route('observations.edit', ['id' => $observation->id]) }}">編輯</a></td>
-                    <td>
-                        <form action="{{ url('observations/delete',['id' => $observation->id]) }}" method="post">
-                            <input class="btn " type="submit" value="刪除" />
-                            @method('delete')
-                            @csrf
-                        </form>
                 </tr>
-            @endforeach
         </table>
 @endsection
