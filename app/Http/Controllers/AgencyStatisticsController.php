@@ -26,7 +26,7 @@ class AgencyStatisticsController extends Controller
      */
     public function create()
     {
-        //
+        return view("observations.create");
     }
 
     /**
@@ -37,7 +37,16 @@ class AgencyStatisticsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only([
+            'agency_type',
+            'total_count',
+            'government_officials',
+            'simple_appointees',
+            'recommended_appointees',
+            'commissioned_appointees',
+            'average_age',
+            'average_seniority',
+        ]);
     }
 
     /**
@@ -61,7 +70,8 @@ class AgencyStatisticsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $observation = Oberservation::findOrFail($id); 
+        return view('observations.edit', compact('observation')); 
     }
 
     /**
