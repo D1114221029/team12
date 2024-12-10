@@ -1,5 +1,7 @@
 @extends('app')
+
 @section('table')
+ <a href={{ route('observations.create') }}> 新增資料</a>
 <style>
         #customers 
         {
@@ -13,9 +15,9 @@
             padding: 8px;
         }
 
-        #customers tr:nth-child(even){background-color: #f2f2f2;}
+        #customers tr:nth-child(even){background-color: #000000;}
 
-        #customers tr:hover {background-color: #ddd;}
+        #customers tr:hover {background-color: #000000;}
 
          #customers th 
          {
@@ -27,7 +29,7 @@
         }
         body
         {
-            background-color: lightblue;
+            background-color: rgb(132, 51, 152);
         }
 </style>
     <table>

@@ -26,7 +26,7 @@ class GovernmentAgenciesStaffsController extends Controller
      */
     public function create()
     {
-        //
+        return view("observations.create");
     }
 
     /**
@@ -37,7 +37,17 @@ class GovernmentAgenciesStaffsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only([
+            'id',
+		    'agency_type',
+		    'total_people',
+		    'political_staff',
+		    'senior_rank_staff',
+		    'recommended_rank_staff',
+		    'appointed_rank_staff',
+		    'average_age',
+		    'average_seniority',
+        ]);
     }
 
     /**

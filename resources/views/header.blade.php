@@ -9,7 +9,7 @@
   h1 {
   text-align: center;
   text-transform: uppercase;
-  color: #4CAF50;
+  color: #4abbec;
   }
 
   p {
