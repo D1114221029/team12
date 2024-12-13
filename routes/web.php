@@ -23,16 +23,17 @@ Route::get('/sdgs', function ()
     return view('introl_sdgs');
 }
 );
-#處存一筆資料
+
+#儲存一筆資料
 Route::post('observations/store', [GovernmentAgenciesStaffsController::class, 'store'])
-    ->name('observations.create');
+    ->name('observations.store');
 #新增表單
 Route::get('observations/create', [GovernmentAgenciesStaffsController::class, 'create'])
     ->name('observations.create');
 #查詢資料
 Route::get('observations', [GovernmentAgenciesStaffsController::class, 'index'])
     ->name('observations.index');
-#查詢資料
+#顯示資料
 Route::get('observations/{id}', [GovernmentAgenciesStaffsController::class, 'show'])
     ->where('id','[0-9]+')
     ->name('observations.show');

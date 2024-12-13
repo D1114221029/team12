@@ -16,11 +16,11 @@ class CreateGovernmentAgenciesStaffsTable extends Migration
         Schema::create('government_agencies_staffs', function (Blueprint $table) {
             $table->id(); // Primary key with auto-increment
             $table->string('agency_type')->comment('機關類別');
-            $table->integer('total_people')->unsigned()->comment('總計人數');
-            $table->integer('political_staff')->unsigned()->comment('政務人員數量');
-            $table->integer('senior_rank_staff')->unsigned()->comment('簡任(派)人員數量'); 
-            $table->integer('recommended_rank_staff')->unsigned()->comment('薦任(派)人員數量');
-            $table->integer('appointed_rank_staff')->unsigned()->comment('委任(派)人員數量');
+            $table->integer('total_people')->comment('總計人數');
+            $table->integer('political_staff')->comment('政務人員數量');
+            $table->integer('senior_rank_staff')->comment('簡任(派)人員數量'); 
+            $table->integer('recommended_rank_staff')->comment('薦任(派)人員數量');
+            $table->integer('appointed_rank_staff')->comment('委任(派)人員數量');
             $table->double('average_age', 5, 2)->comment('平均年齡');
             $table->double('average_seniority', 5, 2)->comment('平均年資');
             $table->timestamps(); // Laravel 預設的 created_at 和 updated_at 欄位

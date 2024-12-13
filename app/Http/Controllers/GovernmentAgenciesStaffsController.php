@@ -38,7 +38,6 @@ class GovernmentAgenciesStaffsController extends Controller
     public function store(Request $request)
     {
         $data = $request->only([
-            'id',
 		    'agency_type',
 		    'total_people',
 		    'political_staff',
@@ -47,7 +46,10 @@ class GovernmentAgenciesStaffsController extends Controller
 		    'appointed_rank_staff',
 		    'average_age',
 		    'average_seniority',
+            
         ]);
+        $observation = Observation::create($data);
+        return redirect('observations');
     }
 
     /**
