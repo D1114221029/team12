@@ -13,7 +13,7 @@ class AgencyStatisticsController extends Controller
     public function index()
     {
         //
-        $obervations = Oberservation::all();
+        $obervations = Oberservation::orderBy('id', 'asc')->get();
         return view("observations.index", compact("obervations"));
         //return view('observations.index');
         
@@ -47,6 +47,9 @@ class AgencyStatisticsController extends Controller
             'average_age',
             'average_seniority',
         ]);
+        $observation = Oberservation::create($data);
+
+        return redirect('observations');
     }
 
     /**

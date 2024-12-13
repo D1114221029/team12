@@ -1,7 +1,7 @@
 @extends('app')
 @section('title', '全國公務人員數案機關分類表單')
 @section('agencystatistics_contents')
-全國公務人員數案機關分類表單
+
 {!! Form::open(['url'=>'observations/store']) !!}
     <div class="form-group">
         {!! Form::label('agency_type','機關類別')!!}
