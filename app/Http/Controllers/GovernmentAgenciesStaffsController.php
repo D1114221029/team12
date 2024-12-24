@@ -73,7 +73,8 @@ class GovernmentAgenciesStaffsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $observation = Observation::findOrFail($id);
+        return view("observations.edit")->with('observation',$observation);
     }
 
     /**
@@ -85,7 +86,24 @@ class GovernmentAgenciesStaffsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $observation = Observation::findOrFail($id);
+       
+        $data = $request->only([
+            'agency_type',
+		    'total_people',
+		    'political_staff',
+		    'senior_rank_staff',
+		    'recommended_rank_staff',
+		    'appointed_rank_staff',
+		    'average_age',
+		    'average_seniority',
+        ]);
+
+        $observation->fill($data);
+
+        $observation->save();
+        
+        return redirect('observations');
     }
 
     /**

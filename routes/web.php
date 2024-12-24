@@ -24,24 +24,28 @@ Route::get('/sdgs', function ()
 }
 );
 
-#儲存一筆資料
+# 儲存一筆資料
 Route::post('observations/store', [GovernmentAgenciesStaffsController::class, 'store'])
     ->name('observations.store');
-#新增表單
+# 新增表單
 Route::get('observations/create', [GovernmentAgenciesStaffsController::class, 'create'])
     ->name('observations.create');
-#查詢資料
+# 查詢資料
 Route::get('observations', [GovernmentAgenciesStaffsController::class, 'index'])
     ->name('observations.index');
-#顯示資料
+# 顯示特定一筆資料
 Route::get('observations/{id}', [GovernmentAgenciesStaffsController::class, 'show'])
     ->where('id','[0-9]+')
     ->name('observations.show');
-#編輯資料
-Route::get('observations/{id}/edit', [GovernmentAgenciesStaffsController::class, 'index'])
+# 編輯特定一筆資料
+Route::get('observations/{id}/edit', [GovernmentAgenciesStaffsController::class, 'edit'])
     ->where('id','[0-9]+')
     ->name('observations.edit');
-#刪除資料
+# 修改資料
+Route::patch('observations/update/{id}', [GovernmentAgenciesStaffsController::class, 'update'])
+    ->where('id','[0-9]+')
+    ->name('observations.update');
+# 刪除資料
 Route::delete('observations/delete/{id}', [GovernmentAgenciesStaffsController::class, 'destroy'])
     ->where('id','[0-9]+')
     ->name('observations.destroy');

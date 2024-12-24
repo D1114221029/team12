@@ -29,7 +29,7 @@
         }
         body
         {
-            background-color: rgb(132, 51, 152);
+            background-color: rgb(175, 175, 176);
         }
 </style>
     <table>
