@@ -74,7 +74,7 @@ class AgencyStatisticsController extends Controller
     public function edit($id)
     {
         $observation = Oberservation::findOrFail($id); 
-        return view('observations.edit', compact('observation')); 
+        return view('observations.edit', compact('observation', $observation)); 
     }
 
     /**

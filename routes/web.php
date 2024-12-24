@@ -25,6 +25,6 @@ Route::get('/sdgs', function () {
 Route::post('observations/store', [AgencyStatisticsController::class,'store'])->name('observations.store');
 Route::get('observations/create', [AgencyStatisticsController::class,'create'])->name('observations.create');
 Route::get('observations', [AgencyStatisticsController::class,'index'])->name('observations.index');
-Route::get('observations/{id}', [AgencyStatisticsController::class,'show'])->name('observations.show');
-Route::get('observations/{id}/edit', [AgencyStatisticsController::class,'edit'])->name('observations.edit');
+Route::get('observations/{id}', [AgencyStatisticsController::class,'show'])->where('id','[0-9]+')->name('observations.show');
+Route::get('observations/{id}/edit', [AgencyStatisticsController::class,'edit'])->where('id','[0-9]+')->name('observations.edit');
 Route::delete('observations/delete/{id}', [AgencyStatisticsController::class,'destroy'])->name('observations.destroy');
