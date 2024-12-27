@@ -3,6 +3,7 @@
 @section('agencystatistics_contents')
 
 {!! Form::model($observation,['method'=>'PATCH','action'=>['\App\Http\Controllers\AgencyStatisticsController@update',$observation->id]]) !!}
+    @include('message.list')
     @include('observations.form',['submitButtonText'=>"修改資料"])
 {!! Form::close() !!}
 @endsection

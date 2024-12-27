@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\examine;
 use Illuminate\Http\Request;
 use App\Models\Oberservation;
 class AgencyStatisticsController extends Controller
@@ -37,6 +38,8 @@ class AgencyStatisticsController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $request->validated();
+        /*
         $data = $request->only([
             'agency_type',
             'total_count',
@@ -46,7 +49,7 @@ class AgencyStatisticsController extends Controller
             'commissioned_appointees',
             'average_age',
             'average_seniority',
-        ]);
+        ]);*/
         $observation = Oberservation::create($data);
 
         return redirect('observations');
@@ -84,9 +87,11 @@ class AgencyStatisticsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(examine $request, $id)
     {
         $observation = Oberservation::findOrFail($id); 
+        $data = $request->validated();
+        /*
         $data = $request->only([
             'agency_type',
             'total_count',
@@ -96,7 +101,7 @@ class AgencyStatisticsController extends Controller
             'commissioned_appointees',
             'average_age',
             'average_seniority',
-        ]);
+        ]);*/
         $observation->fill($data);
         $observation->save();
         return redirect('observations');

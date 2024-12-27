@@ -3,6 +3,7 @@
 @section('agencystatistics_contents')
 
 {!! Form::open(['url'=>'observations/store']) !!}
+    @include('message.list')
     @include('observations.form',['submitButtonText'=>"新增資料"])
 {!! Form::close() !!}
 @endsection
