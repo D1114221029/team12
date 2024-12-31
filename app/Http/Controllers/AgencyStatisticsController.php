@@ -39,17 +39,7 @@ class AgencyStatisticsController extends Controller
     public function store(Request $request)
     {
         $data = $request->validated();
-        /*
-        $data = $request->only([
-            'agency_type',
-            'total_count',
-            'government_officials',
-            'simple_appointees',
-            'recommended_appointees',
-            'commissioned_appointees',
-            'average_age',
-            'average_seniority',
-        ]);*/
+
         $observation = Oberservation::create($data);
 
         return redirect('observations');
@@ -91,17 +81,6 @@ class AgencyStatisticsController extends Controller
     {
         $observation = Oberservation::findOrFail($id); 
         $data = $request->validated();
-        /*
-        $data = $request->only([
-            'agency_type',
-            'total_count',
-            'government_officials',
-            'simple_appointees',
-            'recommended_appointees',
-            'commissioned_appointees',
-            'average_age',
-            'average_seniority',
-        ]);*/
         $observation->fill($data);
         $observation->save();
         return redirect('observations');
