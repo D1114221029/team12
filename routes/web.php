@@ -29,3 +29,7 @@ Route::get('observations/{id}', [AgencyStatisticsController::class,'show'])->whe
 Route::get('observations/{id}/edit', [AgencyStatisticsController::class,'edit'])->where('id','[0-9]+')->name('observations.edit');
 Route::patch('observations/update/{id}', [AgencyStatisticsController::class,'update'])->where('id','[0-9]+')->name('observations.update');
 Route::delete('observations/delete/{id}', [AgencyStatisticsController::class,'destroy'])->name('observations.destroy');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
