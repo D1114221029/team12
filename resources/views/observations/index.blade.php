@@ -17,6 +17,7 @@
         </thead>
         <tbody>
             @foreach ($obervations as $observation)
+            @auth
                 <tr>
                     <td>{{$observation->id}}</td>
                     <td>{{$observation->agency_type}}</td>
@@ -33,6 +34,7 @@
                         </form>
                     </td>
                 </tr>
+            @endauth
             @endforeach
         </tbody>
     </table>
