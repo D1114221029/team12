@@ -49,3 +49,11 @@ Route::patch('observations/update/{id}', [GovernmentAgenciesStaffsController::cl
 Route::delete('observations/delete/{id}', [GovernmentAgenciesStaffsController::class, 'destroy'])
     ->where('id','[0-9]+')
     ->name('observations.destroy');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
