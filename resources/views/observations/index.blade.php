@@ -1,6 +1,5 @@
 @extends('app')
 @section('agencystatistics_contents')
-<a href="{{route('observations.create')}}">新增資料</a>
 <section>
     <table>
         <thead>
@@ -17,24 +16,28 @@
         </thead>
         <tbody>
             @foreach ($obervations as $observation)
-            @auth
-                <tr>
-                    <td>{{$observation->id}}</td>
-                    <td>{{$observation->agency_type}}</td>
-                    <td>{{$observation->total_count}}</td>
-                    <td>{{$observation->average_age}}</td>
-                    <td>{{$observation->average_seniority}}</td>
-                    <td><a href="{{route('observations.show',['id'=>$observation->id])}}">顯示</a></td>
-                    <td><a href="{{route('observations.edit',['id'=>$observation->id])}}">修改</a></td>
-                    <td>
-                        <form action="{{url('/observations/delete',['id'=> $observation->id])}}"method="post">
-                            <input class="btn" type="submit" value="刪除"/>
-                            @method('delete')
-                            @csrf
-                        </form>
-                    </td>
-                </tr>
-            @endauth
+                @auth
+                    <tr>
+                        <td>{{$observation->id}}</td>
+                        <td>{{$observation->agency_type}}</td>
+                        <td>{{$observation->total_count}}</td>
+                        <td>{{$observation->average_age}}</td>
+                        <td>{{$observation->average_seniority}}</td>
+                        <td><a href="{{route('observations.show',['id'=>$observation->id])}}">顯示</a></td>
+                        @can('admin')
+                            <td><a href="{{route('observations.edit',['id'=>$observation->id])}}">修改</a></td>
+                            <td>
+                                <form action="{{url('/observations/delete',['id'=> $observation->id])}}"method="post">
+                                    <input class="btn" type="submit" value="刪除"/>
+                                    @method('delete')
+                                    @csrf
+                                </form>
+                            </td>
+                        @elsecan('manager')
+                            <td><a href="{{route('observations.edit',['id'=>$observation->id])}}">修改</a></td>
+                        @endcan
+                    </tr>
+                @endauth
             @endforeach
         </tbody>
     </table>

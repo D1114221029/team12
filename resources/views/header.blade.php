@@ -44,4 +44,9 @@
             @endguest
         </ul>
     </div>
+    @auth
+        @can('admin')
+            <a href="{{route('observations.create')}}">新增資料</a>
+        @endcan
+    @endauth
 </header>
