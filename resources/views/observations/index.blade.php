@@ -1,7 +1,12 @@
 @extends('app')
 
 @section('table')
- <a href={{ route('observations.create') }}> 新增資料</a>
+    @can('admin')
+    <a href="{{ route('observations.create') }}"> 新增資料</a>        
+    @endcan
+    @auth
+    <a href={{ route('observations.create') }}> 新增資料</a>    
+    @endauth
 <style>
         #customers 
         {
@@ -57,6 +62,7 @@
                     <td>{{ $observation->average_age }}</td>
                     <td>{{ $observation->average_seniority }}</td>
                     <td><a href="{{ route('observations.show', ['id' => $observation->id]) }}">顯示</a></td>
+                    @can('admin')
                     <td><a href="{{ route('observations.edit', ['id' => $observation->id]) }}">編輯</a></td>
                     <td>
                         <form action="{{ url('observations/delete',['id' => $observation->id]) }}" method="post">
@@ -64,6 +70,10 @@
                             @method('delete')
                             @csrf
                         </form>
+                    </td>
+                    @elsecan('manager')
+                    <td><a href="{{ route('observations.edit', ['id'=>$observation->id]) }}">修改</a></td>
+                    @endcan
                 </tr>
             @endforeach
         </table>

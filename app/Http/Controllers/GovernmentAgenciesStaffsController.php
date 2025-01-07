@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Observation;
-
+use Illuminate\Http\Request;
 
 class GovernmentAgenciesStaffsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth',['except'=>'index']);
+    }
     /**
      * Display a listing of the resource.
      *
